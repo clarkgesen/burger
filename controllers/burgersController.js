@@ -4,17 +4,14 @@ const burger = require("../models/burger.js");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.redirect("/burgers");
-});
+    burger.list((burgers) => {
+      const viewData = {
+        burgers: burger
+      };
+      console.log(viewData);
 
-router.get("/burgers", (req, res) => {
-    burger.all(function(data) {
-        var hbsObject = {
-          burgers: data
-        };
-        console.log(hbsObject);
-        res.render("index", hbsObject);
-      });
+      res.render("../views/layout/index.handlebars", viewData);
+    });
 });
 
 router.post("/burgers/create", (req, res) => {

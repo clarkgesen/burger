@@ -1,0 +1,28 @@
+<div class="row">
+    {{!-- undevoured burgers --}}
+    <div class="col-md-6">
+        {{#each burgers}}
+        {{#unless this.devoured}}
+        <p>{{this.name}}</p>
+        {{/unless}}
+        {{/each}}
+    </div>
+    {{!-- devoured burgers --}}
+    <div class="col-md-6">
+        {{#each burgers}}
+        {{#if this.devoured}}
+        <p>{{this.name}}</p>
+        {{/unless}}
+        {{/each}}
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/burgers/create" method="POST">
+                <input type="test" name="burger_name" id="name">
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </form>
+        </div>
+    </div>x
+</div>
