@@ -1,6 +1,6 @@
 const express = require('express');
 
-const orm = require("./config/orm");
+const burger = require("./models/burger");
 
 // orm.selectAll("burgers",(result) => {
 //   console.log(result);
@@ -20,6 +20,10 @@ const orm = require("./config/orm");
 // }, 4, (result) => {
 //   console.log(result);
 // })
+
+burger.list((result) => {
+  console.log(result);
+})
 
 var PORT = process.env.PORT || 8080;
 
