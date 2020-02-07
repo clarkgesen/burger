@@ -1,5 +1,26 @@
 const express = require('express');
 
+const orm = require("./config/orm");
+
+// orm.selectAll("burgers",(result) => {
+//   console.log(result);
+// });
+
+// orm.insertOne("burgers", {
+//   burger_name : "The Barnyard",
+//   devoured: false
+// }, (result) => {
+//   console.log(result);
+// });
+
+// orm.updateOne("burgers", {
+//   burger_name: "Big Mac",
+//   devoured: true,
+
+// }, 4, (result) => {
+//   console.log(result);
+// })
+
 var PORT = process.env.PORT || 8080;
 
 var app = express();
