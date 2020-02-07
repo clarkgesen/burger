@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
       };
       console.log(viewData);
 
-      res.render("../views/layout/index.handlebars", viewData);
+      res.render("../views/layouts/index.handlebars", viewData);
     });
 });
 
@@ -26,8 +26,11 @@ router.post("/burgers/create", (req, res) => {
       });
 });
 
-router.put("/burgers/:id", (req, res) => {
-
+router.post("/burgers/devour/:id", (req, res) => {
+  const id = req.params.id;
+  burger.devour(id, (result) => {
+    res.redirect("/");
+  });
 });
 
 module.exports = router;

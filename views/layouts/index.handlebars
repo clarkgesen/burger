@@ -3,6 +3,12 @@
     <div class="col-md-6">
         {{#each burgers}}
         {{#unless this.devoured}}
+        <div class="burger">
+            <h2>{{this.name}}</h2>
+            <form action="/burgers/devour/{{this.id}}" method="POST">
+                <button type="submit" class="btn btn-success">Devour!</button>
+            </form>
+        </div>
         <p>{{this.name}}</p>
         {{/unless}}
         {{/each}}
