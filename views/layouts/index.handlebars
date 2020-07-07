@@ -2,14 +2,15 @@
     {{!-- undevoured burgers --}}
     <div class="col-md-6">
         {{#each burgers}}
+        {{log this.devoured}}
         {{#unless this.devoured}}
+        
         <div class="burger">
-            <h2>{{this.name}}</h2>
+            <h2>{{this.burger_name}}</h2>
             <form action="/burgers/devour/{{this.id}}" method="POST">
                 <button type="submit" class="btn btn-success">Devour!</button>
             </form>
         </div>
-        <p>{{this.name}}</p>
         {{/unless}}
         {{/each}}
     </div>
@@ -17,8 +18,8 @@
     <div class="col-md-6">
         {{#each burgers}}
         {{#if this.devoured}}
-        <p>{{this.name}}</p>
-        {{/unless}}
+        <p>{{this.burger_name}}</p>
+        {{/if}}
         {{/each}}
     </div>
 </div>
@@ -30,5 +31,5 @@
                 <button type="submit" class="btn btn-danger">Submit</button>
             </form>
         </div>
-    </div>x
+    </div>
 </div>

@@ -12,6 +12,7 @@ const burger = {
     update: (data, id, callback) => {
         orm.updateOne("burgers", data, id, callback);
     },
+    
     devour: (id, callback) => {
         orm.updateOne("burgers", {
             devoured: true

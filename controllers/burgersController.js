@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
     burger.list((burgers) => {
       const viewData = {
-        burgers: burger
+        burgers: burgers
       };
       console.log(viewData);
 
